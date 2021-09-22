@@ -1,0 +1,32 @@
+{% extends "layouts/base.jinja" %}
+{% block content %}
+<main>
+        <iframe class="rdp-iframe" src="https://google.ca" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%" id="rdpGuac" onmouseover="setFocus('rdpGuac');" onmouseout="looseFocus('content');"></iframe>
+        {# <iframe class="rdp-iframe" src="{{ url }}" gesture="media"  allow="encrypted-media" allowfullscreen id="rdpGuac" onmouseover="setFocus('rdpGuac');" onmouseout="looseFocus('content');"></iframe> #}
+</main>
+
+<style>
+    .rdp-iframe {
+    display: block;
+    background: #000;
+    border: none;
+    height: 100%;
+    width: 100%;
+    }
+    ::-webkit-scrollbar {
+        width: 13px;
+        height: 13px;
+    }
+    </style>
+    <script>
+    // Guac
+        function setFocus(guac_id) {
+        document.getElementById(guac_id).contentWindow.focus();
+        }
+        function looseFocus(parent_id)
+        {
+        document.getElementById(parent_id).contentWindow.focus();
+        }
+        document.oncontextmenu = function() {return false;};
+</script>
+{% endblock %}

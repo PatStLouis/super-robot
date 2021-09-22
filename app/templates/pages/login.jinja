@@ -1,0 +1,27 @@
+{% extends "layouts/base.jinja" %}
+{% block content %}
+<main>
+    <section class="min-vh-100 d-flex align-items-center bg-secondary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="card card-tertiary w-100 fmxw-400">
+                        <div class="card-header text-center">
+                            <span>Connexion</span>
+                        </div>
+                        <div class="card-body">
+                            <form class="" method="post">
+                            {{ form.csrf_token }}
+                                <div class="form-group">
+                                {{ form.code(class_="form-control", placeholder="Code") }}
+                                </div>
+                            {{ form.submit(class_="btn btn-block btn-primary") }}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
